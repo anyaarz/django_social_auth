@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')6-i_9*z6^9u(s($ty7hu_8l8(#o!54imym1t0e5!g&f4xjob#'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 import dj_database_url
@@ -78,8 +78,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'social_app.wsgi.application'
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = '7140521'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = '2zV0mUiDGwutteudH27a'
+SOCIAL_AUTH_VK_OAUTH2_KEY = ''
+SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', 'user_link', 'friends',] 
 SOCIAL_AUTH_VK_OAUTH2_PROFILE_EXTRA_PARAMS = {       
   'fields': 'id, first_name,last_name, email, photo_200 ,friends', }
