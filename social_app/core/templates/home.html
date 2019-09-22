@@ -1,0 +1,40 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col-sm-12 mb-3">
+      <h4 class="text-center">Привет, {{ user.get_full_name }}!</h4>
+    </div>
+    {% for ass in backends.associated %}
+      {% if ass.provider == 'vk-oauth2' %}
+        <div class="col-md-6 text-center">
+            <img src="{{ass.extra_data.photo_200}}" alt="" width="100" height="100" style="border-radius: 50%">
+        </div>
+        <div class="col-md-6 social-container my-2">                 <p> {{ ass.provider }} </p>
+            <p> {{ ass.extra_data.first_name }} {{ ass.extra_data.last_name }} </p>
+
+        </div>
+      {% endif %}
+    {% endfor %}
+    <div class="col-sm-12 mt-2 text-center">
+      <button class="btn btn-danger">
+        <a href="{% url 'logout' %}">Logout</a>
+      </button>
+     </div>
+  </div>
+    <div class="row">
+    <div class="col-sm-12 mb-3">
+    <h4 class="text-center"></h4>
+      <h4 class="text-center">Друзья</h4>
+    </div>
+    {% for friend in goodies %}
+        <div class="col-md-6 social-container my-2">
+        <img src="{{friend.photo_200}}" alt="" width="100" height="100" style="border-radius: 50%">               
+        <p> {{ friend.first_name }} {{ friend.last_name }} </p>
+        </div>
+     {% endfor %}
+  </div>
+ 
+{% endblock %}}
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-12 mb-3">
+      <h4 class="text-center">Welcome {{ user.get_full_name }}</h4>
+    </div>
+    {% for fr in friends %}
+        <div class="col-md-6 social-container my-2">                 
+            <p> Name:  {{ fr }} </p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}
